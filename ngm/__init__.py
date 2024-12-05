@@ -23,7 +23,12 @@ def simulate(
         ve (float): Vaccine efficacy
 
     Returns:
-        dict: Contains dominant eigenvalue, dominant eigenvector, and adjusted NGM accounting for vaccination
+        dict: Keys (values) are
+        "R" (the NGM with vaccination),
+        "Re" (the effective reproductive number with vaccination),
+        "infections" (the proportion of infections in each category), and
+        "severe_infections_per_infection" (the number of severe infections in the next generation
+        per infection in the current generation)
     """
     n_groups = len(n)
     assert len(n_vax) == n_groups
@@ -40,7 +45,7 @@ def simulate(
         "R": R_vax,
         "Re": eigen.value,
         "infections": eigen.vector,
-        "severe_infection_ratio": np.dot(eigen.vector, p_severe),
+        "severe_infections_per_infection": eigen.value * eigen.vector * p_severe,
     }
 
 

@@ -27,10 +27,7 @@ def simulate(params):
         R_novax=R_novax, n=N_i, n_vax=n_vax, p_severe=p_severe, ve=params["ve"]
     )
 
-    Re = result["Re"]
-    ifr = result["severe_infection_ratio"]
-
-    return pl.DataFrame({"Re": Re, "ifr": ifr, "ifr_times_Re": ifr * Re})
+    return pl.DataFrame({"Re": result["Re"], "ifr_times_Re": result["severe_infections_per_infection"]})
 
 
 results_all = griddler.run_squash(simulate, parameter_sets).with_columns(
@@ -38,7 +35,7 @@ results_all = griddler.run_squash(simulate, parameter_sets).with_columns(
 )
 
 results = (
-    results_all.select(["n_vax_total", "vax_strategy", "Re", "ifr", "ifr_times_Re"])
+    results_all.select(["n_vax_total", "vax_strategy", "Re", "ifr_times_Re"])
     .with_columns(cs.float().round(3))
     .sort(["n_vax_total", "vax_strategy"])
 )

@@ -43,8 +43,8 @@ def app():
 
     button_to_core = {"Core" : 0, "Kids" : 1, "Even" : "even"}
 
-    allocation_default = [0] * n_groups
-    if ndoses > 0:
+    allocation_default = [0.0] * n_groups
+    if ndoses > 0.0:
         allocation_default = ngm.distribute_vaccines(V=ndoses, N_i=N, strategy=button_to_core[strategy])
         allocation_default = 100 * allocation_default / allocation_default.sum()
 
@@ -112,14 +112,14 @@ def app():
 
     # Display results
     st.write(f"R-effective: {result['Re']:.2f}")
-    st.write("Proportion of infections in each group:")
+    st.write("Per infection in current generation, number of severe infections in each group in the next generation will be:")
     st.dataframe(
         pd.DataFrame(
-            [np.round(result["infections"], 2)],
+            [np.round(result["severe_infections_per_infection"], 3)],
             columns=group_names,
         ).style.hide(axis="index")
     )
-    st.write(f"Infection fatality ratio: {(p_severe * result['infections']).sum():.3f}")
+    st.write(f"Total severe infections in the next generation (per infection in current generation): {(result['severe_infections_per_infection']).sum():.3f}")
 
     st.subheader("Counterfactual (no vaccination):")
     st.write("Next Generation Matrix:")
@@ -132,14 +132,14 @@ def app():
     )
     novax_eigen = ngm.dominant_eigen(r_novax)
     st.write(f"R0: {novax_eigen.value:.2f}")
-    st.write("Proportion of infections in each group:")
+    st.write("Per infection in current generation, number of severe infections in each group in the next generation will be:")
     st.dataframe(
         pd.DataFrame(
-            [np.round(novax_eigen.vector, 2)],
+            [np.round(novax_eigen.value * p_severe * novax_eigen.vector, 2)],
             columns=group_names,
         ).style.hide(axis="index")
     )
-    st.write(f"Infection fatality ratio: {(p_severe * novax_eigen.vector).sum():.3f}")
+    st.write(f"Total severe infections in the next generation (per infection in current generation): {(novax_eigen.value * p_severe * novax_eigen.vector).sum():.3f}")
 
 
 if __name__ == "__main__":

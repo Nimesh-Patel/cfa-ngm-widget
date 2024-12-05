@@ -54,8 +54,7 @@ def test_simulate():
     p_severe = np.array([0.02, 0.06, 0.02, 0.02])
     ve = 1.0
     current = ngm.simulate(R_novax=R_novax, n=n, n_vax=n_vax, p_severe=p_severe, ve=ve)
-
-    assert set(current.keys()) == {"Re", "R", "infections", "severe_infection_ratio"}
+    assert set(current.keys()) == {"Re", "R", "infections", "severe_infections_per_infection"}
     assert np.isclose(current["Re"], 0.9213240982914677)
     assert_allclose(
         current["R"],
@@ -73,11 +72,9 @@ def test_simulate():
         np.array([0.44507246, 0.10853944, 0.17503951, 0.2713486]),
     )
 
-    # this test has values borrowed from when we had defined this output differently,
-    # which is why the calculation looks so wacky
     assert_allclose(
-        current["severe_infection_ratio"],
-        sum(np.array([0.00820112, 0.006, 0.00322536, 0.005])) / current["Re"],
+        current["severe_infections_per_infection"],
+        np.array([0.00820112, 0.006, 0.00322536, 0.005]),
         rtol=1e-5,
     )
 
