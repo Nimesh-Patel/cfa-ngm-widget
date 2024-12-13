@@ -32,9 +32,9 @@ The NGM is akin to the branching process concept of an offspring distribution ge
 ## Use of NGM as a model
 Most commonly, Next Generation Matrix models are used as an analytical tool to estimate the basic reproduction number $R_0$, an epidemiological quantity that can help provide insight about disease dynamics during outbreaks and how to design interventions to control or mitigate them, from the NGM.
 
-As a result, most modelers familiar with NGMs have experience with using them as an analytical tool rather than a simulation tool.
+As a result, most modelers familiar with NGMs have experience with using them as an analytical tool rather than as a simulation tool.
 
-NGMs can also be used to approximately model the ODEs for the subsystem of infected states, where we assume the unit of time is the infectious period.
+NGMs can also be used to approximately model the ODEs for the subsystem of infected states, where the unit of time is the infectious period.
 
 
 
