@@ -15,7 +15,7 @@ The NGM is akin to the branching process concept of an offspring distribution ge
 
 [Derivation from infectious disease dynamics](#derivation-from-infectious-disease-dynamics)
 
-[The F and M matrix](#the-f-and-m-matrix)
+[The F and V matrix](#the-f-and-v-matrix)
 
 [Contact matrices](#contact-matrices)
 
@@ -36,16 +36,14 @@ As a result, most modelers familiar with NGMs have experience with using them as
 
 NGMs can also be used to approximately model the ODEs for the subsystem of infected states, where the unit of time is the infectious period.
 
-
-
-
 ## Interpretation of matrix elements
+Imagine we have an NGM, **M**,
 
 ### Explanatory comma: Frequency vs Density dependent models
 
 ## Derivation from infectious disease dynamics
 
-### The F and M matrix
+### The F and V matrix
 
 ## Contact matrices
 
