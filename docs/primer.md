@@ -12,18 +12,21 @@ The NGM is akin to the branching process concept of an offspring distribution ge
 
 [Explanatory comma: Frequency vs Density dependent models](#explanatory-comma-frequency-vs-density-dependent-models)
 
+[Building up from the SIR model](#building-up-from-the-sir-model)
 
 [Derivation from infectious disease dynamics](#derivation-from-infectious-disease-dynamics)
 
-[The F and V matrix](#the-f-and-v-matrix)
-
 [Contact matrices](#contact-matrices)
+
+[Example: homogeneous mixing](#example-homogeneous-mixing-as-a-pairwise-model)
+
+[Example: proportionate group mixing](#example-proportionate-group-mixing)
 
 [Conditions and limitations](#conditions-and-limitations)
 
-[Building up from the SIR model](#building-up-from-the-sir-model)
-
 [Formal definition](#formal-definition)
+
+[The F and V matrix](#the-f-and-v-matrix)
 
 [When population sizes are different](#when-population-sizes-are-different)
 
@@ -43,16 +46,21 @@ Imagine we have an NGM, **M** = [$m_{ij}$]. The elements $m_{ij}$ of this matrix
 
 ## Derivation from infectious disease dynamics
 
-### The F and V matrix
-
-## Contact matrices
-
-## Conditions and limitations
-
 ## Building up from the SIR model
 deriving NGM for a simple SIR
 
+
+## Contact matrices
+
+### Example: homogeneous mixing as a pairwise model
+
+### Example: proportionate group mixing
+
+## Conditions and limitations
+
 ## Formal definition
+
+### The F and V matrix
 
 ## When population sizes are different
 
