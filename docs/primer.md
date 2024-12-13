@@ -12,9 +12,12 @@ The NGM is akin to the branching process concept of an offspring distribution ge
 
 [Explanatory comma: Frequency vs Density dependent models](#explanatory-comma-frequency-vs-density-dependent-models)
 
+
 [Derivation from infectious disease dynamics](#derivation-from-infectious-disease-dynamics)
 
 [The F and M matrix](#the-f-and-m-matrix)
+
+[Contact matrices](#contact-matrices)
 
 [Conditions and limitations](#conditions-and-limitations)
 
@@ -27,6 +30,14 @@ The NGM is akin to the branching process concept of an offspring distribution ge
 [When distributions of population groups vary](#when-distributions-of-population-groups-vary)
 
 ## Use of NGM as a model
+Most commonly, Next Generation Matrix models are used as an analytical tool to estimate the basic reproduction number $R_0$, an epidemiological quantity that can help provide insight about disease dynamics in outbreaks and how to design interventions to control or mitigate them, from the NGM.
+
+As a result, most modelers familiar with NGMs have experience with using them as an analytical tool rather than a simulation tool.
+
+NGMs can also be used to approximately model the ODEs for the subsystem of infected states, where we assume the unit of time is the infectious period.
+
+
+
 
 ## Interpretation of matrix elements
 
@@ -35,6 +46,8 @@ The NGM is akin to the branching process concept of an offspring distribution ge
 ## Derivation from infectious disease dynamics
 
 ### The F and M matrix
+
+## Contact matrices
 
 ## Conditions and limitations
 
