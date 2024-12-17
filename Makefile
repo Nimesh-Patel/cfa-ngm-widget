@@ -1,14 +1,9 @@
-ifndef ENGINE
 ENGINE = podman
-endif
-
-ifndef TARGET
 TARGET = ngm
-endif
 
-.PHONY: streamlit build_container
+.PHONY: run build_container run_container
 
-streamlit:
+run:
 	streamlit run scripts/widget.py
 
 build_container:
