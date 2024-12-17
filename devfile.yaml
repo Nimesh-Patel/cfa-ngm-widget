@@ -1,7 +1,7 @@
 schemaVersion: 2.2.0
 metadata:
-  name: my-app
-  version: 3.0.0
+  name: ngm-widget
+  version: 0.1.0
   displayName: Python Runtime
   description: Stack with python 3.9
   projectType: "Python"
@@ -30,9 +30,9 @@ components:
     kubernetes:
       uri: deploy.yaml
       endpoints:
-      - name: http-8501
-        targetPort: 8501
-        path: /
+        - name: http-8501
+          targetPort: 8501
+          path: /
 commands:
   - id: build-image
     apply:
