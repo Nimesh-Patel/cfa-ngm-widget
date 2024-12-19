@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
@@ -11,7 +11,9 @@ RUN apt-get update \
 
 COPY . .
 
-RUN pip3 install poetry && poetry install
+RUN pip3 install poetry \
+    && poetry config virtualenvs.in-project true \
+    && poetry install
 
 EXPOSE 8501
 
